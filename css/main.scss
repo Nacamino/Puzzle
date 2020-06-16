@@ -23,7 +23,9 @@
     height: 25%;
     flex: 25%;
     position: relative;
-
+    &--red {
+      background-color: rgb(255, 112, 112);
+    }
     & > div {
       position: absolute;
       left: 50%;
@@ -74,4 +76,19 @@
       }
     }
   }
+}
+.time {
+  font-size: 2em;
+  top: 8%;
+  left: 58%;
+  position: absolute;
+
+  text-align: center;
+}
+.button {
+  top: 8%;
+  left: 30%;
+  position: absolute;
+  font-size: 2em;
+  padding: 10px;
 }

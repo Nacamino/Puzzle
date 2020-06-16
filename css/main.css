@@ -35,6 +35,10 @@
   position: relative;
 }
 
+.flex_container .number--red {
+  background-color: #ff7070;
+}
+
 .flex_container .number > div {
   position: absolute;
   left: 50%;
@@ -89,5 +93,21 @@
 
 .flex_container .number#hueco .bottom {
   top: -2em;
+}
+
+.time {
+  font-size: 2em;
+  top: 8%;
+  left: 58%;
+  position: absolute;
+  text-align: center;
+}
+
+.button {
+  top: 8%;
+  left: 30%;
+  position: absolute;
+  font-size: 2em;
+  padding: 10px;
 }
 /*# sourceMappingURL=main.css.map */

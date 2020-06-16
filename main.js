@@ -5,6 +5,8 @@ class Tablero {
     this.win = false;
     this.blank_space = 15;
     this.allowedMovements = null;
+    //
+    this.Cronometro = new cronometro();
 
     this.init();
 
@@ -32,7 +34,25 @@ class Tablero {
     this.shuffle();
     this.reorderBlocks();
     this.checkMovements();
+    this.Cronometro.start();
   }
+  // cronometer() {
+  //   var seconds = 0;
+  //   this.time = setInterval(function() {
+  //     seconds++;
+  //     var sec = seconds;
+  //     hour = Math.floor(sec / 3600);
+  //     min = Math.floor((sec % 3600) / 60);
+  //     secs = (sec % 3600) % 60;
+  //     document.getElementById("hms").innerHTML = `${hour} :${min} : ${secs}`;
+
+  //   }, 1000);
+
+  // // cronometer_clean() {
+  // //   clearInterval(this.time);
+  // //   document.getElementById("hms").innerHTML = "00:00:00";
+  // // }
+  // // }
 
   checkMovements() {
     var row;
@@ -140,5 +160,7 @@ class Tablero {
 var tablero = new Tablero();
 
 document.getElementById("test").onclick = () => {
+  document.getElementById("test").innerHTML = "reiniciar";
   tablero.init();
+  time_count.start();
 };
