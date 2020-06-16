@@ -7,7 +7,8 @@ class Tablero {
     this.allowedMovements = null;
     //
     this.cronometro = new TimeCount();
-    this.init();
+
+    this.init(true);
 
     this.startListeners();
   }
@@ -28,30 +29,16 @@ class Tablero {
     });
   }
 
-  init() {
+  init(orden = false) {
     this.win = false;
-    this.shuffle();
+    if (orden == false) {
+      this.shuffle();
+      this.cronometro.start();
+    }
+
     this.reorderBlocks();
     this.checkMovements();
-    this.cronometro.start();
   }
-  // cronometer() {
-  //   var seconds = 0;
-  //   this.time = setInterval(function() {
-  //     seconds++;
-  //     var sec = seconds;
-  //     hour = Math.floor(sec / 3600);
-  //     min = Math.floor((sec % 3600) / 60);
-  //     secs = (sec % 3600) % 60;
-  //     document.getElementById("hms").innerHTML = `${hour} :${min} : ${secs}`;
-
-  //   }, 1000);
-
-  // // cronometer_clean() {
-  // //   clearInterval(this.time);
-  // //   document.getElementById("hms").innerHTML = "00:00:00";
-  // // }
-  // // }
 
   checkMovements() {
     var row;
@@ -94,6 +81,7 @@ class Tablero {
   }
 
   shuffle() {
+    this.blank_space = 15;
     var orden_actual = [];
     for (let i = 1; i < 16; i++) {
       orden_actual.push(i);
