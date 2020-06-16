@@ -31,7 +31,7 @@ class Tablero {
 
   init(orden = false) {
     this.win = false;
-    if (orden == false) {
+    if (!orden) {
       this.shuffle();
       this.cronometro.start();
     }
