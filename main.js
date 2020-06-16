@@ -6,8 +6,7 @@ class Tablero {
     this.blank_space = 15;
     this.allowedMovements = null;
     //
-    this.Cronometro = new cronometro();
-
+    this.cronometro = new TimeCount();
     this.init();
 
     this.startListeners();
@@ -34,7 +33,7 @@ class Tablero {
     this.shuffle();
     this.reorderBlocks();
     this.checkMovements();
-    this.Cronometro.start();
+    this.cronometro.start();
   }
   // cronometer() {
   //   var seconds = 0;
@@ -151,7 +150,7 @@ class Tablero {
         return;
       }
     }
-
+    this.cronometro.clean();
     this.win = true;
     alert("ganaste");
   }

@@ -1,3 +1,6 @@
+const addZero = (num) => {
+  return num < 10 ? `0${num}` : num;
+};
 class TimeCount {
   constructor() {
     this.time = null;
@@ -12,21 +15,13 @@ class TimeCount {
     this.time = setInterval(function () {
       seconds++;
       var sec = seconds;
-      hour = Math.floor(sec / 3600);
-      min = Math.floor((sec % 3600) / 60);
-      secs = (sec % 3600) % 60;
-      document.getElementById("hms").innerHTML = `${hour} :${min} :${secs}`;
+      var hour = Math.floor(sec / 3600);
+      var min = Math.floor((sec % 3600) / 60);
+      var secs = (sec % 3600) % 60;
 
-      if (min >= 10) {
-        document.getElementById("hms").innerHTML = `0${hour}:${min}:${secs}`;
-      } else if (min < 10) {
-        document.getElementById("hms").innerHTML = `0${hour}:0${min}:${secs}`;
-      }
-      if (secs < 10 && min < 10) {
-        document.getElementById("hms").innerHTML = `0${hour}:0${min}:0${secs}`;
-      } else if (hour <= 10 && secs < 10) {
-        document.getElementById("hms").innerHTML = `0${hour}:${min}:0${secs}`;
-      }
+      document.getElementById("hms").innerHTML = `${addZero(hour)}:${addZero(
+        min
+      )}:${addZero(secs)}`;
     }, 1000);
   }
   clean() {
@@ -34,4 +29,3 @@ class TimeCount {
     document.getElementById("hms").innerHTML = "00:00:00";
   }
 }
-var time_count = new time_count();
