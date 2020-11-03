@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Puzzle de deslizar</title>
+    <link rel="stylesheet" href="./css/main.css" />
+    <link
+      rel="stylesheet"
+      href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
+      integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf"
+      crossorigin="anonymous"
+    />
+  </head>
+  <body>
+    <div class="game_navigation">
+      <div id="visible" class="open">
+        <i class="fas fa-gamepad"></i>
+      </div>
+      <div id="show" class="menu_game menu_game--visible">
+        <input type="checkbox" id="checkbox" class="check" />
+        <div id="hidden" class="close">
+          <i class="fas fa-times"></i>
+        </div>
+        <label for="checkbox" id="icon" class="iconos">
+          <div class="off">
+            <i class="fas fa-volume-mute"></i>
+          </div>
+          <div id="prueba" class="on"><i class="fas fa-volume-down"></i></div>
+        </label>
+        <button id="stop" class="pausa"><i class="fas fa-pause"></i></button>
+        <button id="image2" class="images">imagen</button>
+      </div>
+    </div>
+    <div id="pause" class="paused paused--hidden">
+      <i class="fas fa-play"></i>
+    </div>
+    <div id="image_complete" class="image_complete"></div>
+
+    <div class="game_container">
+      <div class="time">
+        <button class="button" id="test">Iniciar</button>
+
+        <div id="hms">00:00:00</div>
+      </div>
+      <div id="image_container" class="grid_container">
+        <div class="number" id="1"><div>1</div></div>
+        <div class="number" id="2"><div>2</div></div>
+        <div class="number" id="3"><div>3</div></div>
+        <div class="number" id="4"><div>4</div></div>
+        <div class="number" id="5"><div>5</div></div>
+        <div class="number" id="6"><div>6</div></div>
+        <div class="number" id="7"><div>7</div></div>
+        <div class="number" id="8"><div>8</div></div>
+        <div class="number" id="9"><div>9</div></div>
+        <div class="number" id="10"><div>10</div></div>
+        <div class="number" id="11"><div>11</div></div>
+        <div class="number" id="12"><div>12</div></div>
+        <div class="number" id="13"><div>13</div></div>
+        <div class="number" id="14"><div>14</div></div>
+        <div class="number" id="15"><div>15</div></div>
+        <div class="number" id="hueco"></div>
+      </div>
+    </div>
+
+    <script src="./menu.js"></script>
+    <script src="./prueba.js"></script>
+    <script src="./main.js"></script>
+  </body>
+</html>

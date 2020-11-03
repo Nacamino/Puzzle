@@ -1,0 +1,10 @@
+%icons {
+  font-size: 2em;
+  opacity: 0.8;
+  padding-top: 25px;
+  padding-left: 10px;
+  &:hover {
+    cursor: pointer;
+    opacity: 1;
+  }
+}
